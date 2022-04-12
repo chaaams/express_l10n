@@ -12,7 +12,12 @@ app.listen(port, ()=>{
     console.log(`le port ${port} est sur écoute`);
 })
 
-app.get('/:fr?', (req, res)=>{
+app.get('/', (req, res)=>{
+    res.render('home', data.fr);
+    console.log(`Data française ${data.fr.title}`);
+})
+
+app.get('/fr', (req, res)=>{
     res.render('home', data.fr);
     console.log(`Data française ${data.fr.title}`);
 })
